@@ -1,39 +1,5 @@
 <html>
-<script>
-function calculate(){
-	var buy=Number(document.getElementById("buy_input").value);
-	var sell=Number(document.getElementById("sell_input").value);
-	var quantity=Number(document.getElementById("quantity_input").value);
-	var turnover=(buy+sell)*quantity;
-	var brokerage=0.01/100*turnover;
-	brokerage=Number(brokerage.toFixed(2));
-	var stt=0.025/100*sell*quantity;
-	stt = Number(Math.ceil(stt));
-	var exch=0.00325/100*turnover
-	exch=Number(exch.toFixed(2));
-	var gst=18/100*(brokerage+exch);
-	gst=Number(gst.toFixed(2));
-	var duty =0.01/100*turnover;
-	duty=Number(duty.toFixed(2));
-	var sebi=15/10000000*turnover;
-	sebi=Number(sebi.toFixed(2));
-	var total=Number(brokerage+stt+exch+gst+duty+sebi);
-	
-
-	
-	document.getElementById("buy_output").innerHTML = buy;
-	document.getElementById("sell_output").innerHTML = sell;
-	document.getElementById("quantity_output").innerHTML = quantity;
-	document.getElementById("turnover_output").innerHTML = turnover;
-	document.getElementById("brokerage_output").innerHTML = brokerage;
-	document.getElementById("stt_output").innerHTML = stt;
-	document.getElementById("exch_output").innerHTML = exch;
-	document.getElementById("gst_output").innerHTML = gst;
-	document.getElementById("duty_output").innerHTML = duty;
-	document.getElementById("sebi_output").innerHTML = sebi;
-	document.getElementById("total").innerHTML = total;
-}
-</script>
+<script src="my_script.js"></script>
 <body>
 	Buy price:<input type="number" id="buy_input"><br>
 	Sell price:<input type="number" id="sell_input"><br>
