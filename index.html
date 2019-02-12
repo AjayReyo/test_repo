@@ -1,5 +1,13 @@
 <html>
+<script>
+function calculate(){
+	var buy=Number(document.getElementById("buy").value);
+	document.getElementById("sum").innerHTML = buy;
+}
+</script>
 <body>
-Hello!
+	Buy price:<input type="number" id="buy">
+	<button onclick="calculate()">Calculate</button>
+	<p id="sum"></p>
 </body>
 </html>
