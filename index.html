@@ -2,6 +2,16 @@
 	<head>
 		<script src="my_script.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+$(document).ready(function(){
+  $("input").keyup(function(){
+    var primaryincome = $("#buy").val();
+    var otherincome = $("#sell").val();
+    var total = parseInt(primaryincome) + parseInt(otherincome);
+    $("#total").text(total);
+  });
+})
+</script>
 	</head>
 		<body>
 		Buy price:<input type="number" id="buy_input"><br>
