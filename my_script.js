@@ -18,3 +18,6 @@ function calculate(){
 	var charges=Number(brokerage+stt+exch+gst+duty+sebi);
 	document.getElementById("charges").innerHTML = charges;
 }
+function test(){
+	alert("Hello! I am an alert box!");
+}
