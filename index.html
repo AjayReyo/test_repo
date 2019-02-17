@@ -1,21 +1,35 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<script src="my_script.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script>
-			$(document).ready(function(){
-			  $("input").keyup(function(){
-			    var buy_price = $("#buy").val();
-			    var sell_price = $("#sell").val();
-			    var total_charges = parseInt(buy_price) + parseInt(sell_price);
-			    $("#charges").text(total_charges);
-			  });
-			})
-		</script>
-	</head>
-	<body>			
-		Buy: <input type="text" id="buy">
-		Sell: <input type="text" id="sell"></br>
-		Charges: <span id="charges"></span>	
-	</body>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("input").keyup(function(){
+    var buy = $("#buy_input").val();
+    var sell = $("#sell_input").val();
+	var quantity = 1;
+    var turnover = parseInt(buy) + parseInt(sell);
+	var brokerage=0.01/100*turnover;
+	brokerage=Number(brokerage.toFixed(2));
+	var stt=0.025/100*sell*quantity;
+	stt = Number(Math.ceil(stt));
+	var exch=0.00325/100*turnover
+	exch=Number(exch.toFixed(2));
+	var gst=18/100*(brokerage+exch);
+	gst=Number(gst.toFixed(2));
+	var duty =0.01/100*turnover;
+	duty=Number(duty.toFixed(2));
+	var sebi=15/10000000*turnover;
+	sebi=Number(sebi.toFixed(2));
+	var charges=Number(brokerage+stt+exch+gst+duty+sebi);
+    $("#charges").text(charges);
+  });
+})
+</script>
+</head>
+<body>
+Buy: <input type="number" id="buy_input">
+Sell: <input type="number" id="sell_input"></br>
+Charges: <span id="charges"></span>
+</body>
 </html>
