@@ -19,5 +19,12 @@ function calculate(){
 	document.getElementById("charges").innerHTML = charges;
 }
 function test(){
-	alert("Hello! I am an alert box!");
+	$(document).ready(function(){
+		$("input").keyup(function(){
+			var primaryincome = $("#buy").val();
+			var otherincome = $("#sell").val();
+			var total = parseInt(primaryincome) + parseInt(otherincome);
+			$("#total").text(total);
+			});
+			})
 }
