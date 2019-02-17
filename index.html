@@ -3,37 +3,19 @@
 		<script src="my_script.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
-$(document).ready(function(){
-  $("input").keyup(function(){
-    var primaryincome = $("#buy").val();
-    var otherincome = $("#sell").val();
-    var total = parseInt(primaryincome) + parseInt(otherincome);
-    $("#total").text(total);
-  });
-})
-</script>
+			$(document).ready(function(){
+			  $("input").keyup(function(){
+			    var buy_price = $("#buy").val();
+			    var sell_price = $("#sell").val();
+			    var total_charges = parseInt(buy_price) + parseInt(sell_price);
+			    $("#charges").text(total_charges);
+			  });
+			})
+		</script>
 	</head>
-		<body>
-		Buy price:<input type="number" id="buy_input"><br>
-		Sell price:<input type="number" id="sell_input"><br>
-		Quantity:<input type="number" id="quantity_input"><br>
-		<button onclick="calculate()">Calculate</button><br>
-		<button onclick="test()">Check</button><br>
-		Results:
-		Buy:<span id="buy_output"></span><br>
-		Sell:<span id="sell_output"></span><br>
-		Quantity:<span id="quantity_output"></span><br>
-		Turnover:<span id="turnover_output"></span><br>
-		Brokerage:<span id="brokerage_output"></span><br>
-		STT:<span id="stt_output"></span><br>
-		Exch:<span id="exch_output"></span><br>
-		GST:<span id="gst_output"></span><br>
-		Duty:<span id="duty_output"></span><br>
-		SEBI:<span id="sebi_output"></span><br>
-			
-		Buy Price: <input type="text" id="buy">
-		Sell Price: <input type="text" id="sell"></br>
-		Total: <span id="total"></span>	
-			
+	<body>			
+		Buy: <input type="text" id="buy">
+		Sell: <input type="text" id="sell"></br>
+		Charges: <span id="charges"></span>	
 	</body>
 </html>
