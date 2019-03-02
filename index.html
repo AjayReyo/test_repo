@@ -28,12 +28,8 @@
 			duty=Number(duty.toFixed(2));
 			var sebi=15/10000000*turnover;
 			sebi=Number(sebi.toFixed(2));
-			console.log("B:",buy,"S:",sell);
-			console.log("Q:",quantity);
-			console.log("T:",turnover);
-			console.log("Brok:",brokerage);
-			console.log("STT:",stt);
-			console.log("Exch:",exch,"GST:",gst,"Duty:",duty,"SEBI:",sebi);
+			console.log("B:",buy,"S:",sell,"Q:",quantity,"T:",turnover);
+			console.log("Brok:",brokerage,"STT:",stt,"Exch:",exch,"GST:",gst,"Duty:",duty,"SEBI:",sebi);
 			var charges=Number(brokerage+stt+exch+gst+duty+sebi);
 			charges=Math.round(charges * 100) / 100;
 			$("#charges").text(charges);
