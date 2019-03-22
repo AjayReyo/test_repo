@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function calc_bep(){
+		var buy = document.getElementById("buy_input").value;
+		console.log(buy);
+		var i;
+		for (i=1;i<=10;i++){
+			var sell=Number(buy)+0.05;
+			sell=Number(sell.toFixed(2));			
+			console.log(sell);			
+			buy=sell;
+		}
+	}	
+</script>
+</head>
+	<body>
+		Buy: <input type="number" id="buy_input">
+		<button onclick="calc_bep()">Click me</button>
+	</body>
+</html>
