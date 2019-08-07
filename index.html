@@ -36,8 +36,10 @@
 			var profit = Number((quantity*(sell-buy))-charges);
 			profit=Math.round(profit * 100) / 100;
 			$("#profit").text(profit);
-			var bep = 1.00076608905833*buy;
-			$("#bep").text(bep);
+			var long_bep = 1.00076608905833*buy;
+			$("#long_bep").text(long_bep);
+			var short_bep = 0.99923449738*sell;
+			$("#short_bep").text(short_bep);
 		});
 	})
 </script>
@@ -46,7 +48,8 @@
 		Buy: <input type="number" id="buy_input">
 		Sell: <input type="number" id="sell_input">
 		Quantity: <input type="number" id="quantity_input"></br>
-		BEP: <span id="bep"></span>
+		Long BEP: <span id="long_bep"></span>
+		Short BEP: <span id="short_bep"></span></br>
 		Charges: <span id="charges"></span>
 		Profit: <span id="profit"></span>
 	</body>
