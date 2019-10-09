@@ -40,6 +40,10 @@
 			$("#long_bep").text(long_bep);
 			var short_bep = 0.99923449738*sell;
 			$("#short_bep").text(short_bep);
+			var long_target = (0.0075*parseInt(buy)) + parseInt(buy);
+			$("#long_target").text(long_target);
+			var short_target = parseInt(sell) - (0.0075*parseInt(sell));
+			$("#short_target").text(short_target);			
 		});
 	})
 </script>
@@ -50,6 +54,8 @@
 		Quantity: <input type="number" id="quantity_input"></br>
 		Long BEP: <span id="long_bep"></span>
 		Short BEP: <span id="short_bep"></span></br>
+		Long Target: <span id="long_target"></span>
+		Short Target: <span id="short_target"></span></br>
 		Charges: <span id="charges"></span>
 		Profit: <span id="profit"></span>
 	</body>
