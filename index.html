@@ -12,28 +12,32 @@
 				quantity=1;
 			}
 			var turnover = (parseInt(buy) + parseInt(sell))*parseInt(quantity);
+			
 			var brokerage=0.03/100*turnover;
 			brokerage=Number(brokerage.toFixed(2));
 			if(brokerage>40){
 				brokerage=40;
 			}
+			
 			var stt=0.025/100*sell*quantity;
 			stt=Math.round(stt);
 			stt=Number(stt.toFixed(2));
-			var exch=0.00325/100*turnover
+			
+			var exch=0.00325/100*turnover;
 			exch=Number(exch.toFixed(2));
+			
 			var gst=18/100*(brokerage+exch);
 			gst=Number(gst.toFixed(2));
-			var duty =0.01/100*turnover;
-			duty=Number(duty.toFixed(2));
-			if(duty>100){
-				duty=100;
-			}
-			var sebi=10/10000000*turnover;
+			
+			var sebi=5/10000000*turnover;
 			sebi=Number(sebi.toFixed(2));
+			
+			var stamp =0.003/100*buy*quantity;
+			stamp=Number(stamp.toFixed(2));
+			
 			console.log("B:",buy,"S:",sell,"Q:",quantity,"T:",turnover);
-			console.log("Brok:",brokerage,"STT:",stt,"Exch:",exch,"GST:",gst,"Duty:",duty,"SEBI:",sebi);
-			var charges=Number(brokerage+stt+exch+gst+duty+sebi);
+			console.log("Brok:",brokerage,"STT:",stt,"Exch:",exch,"GST:",gst,"Stamp:",stamp,"SEBI:",sebi);
+			var charges=Number(brokerage+stt+exch+gst+stamp+sebi);
 			charges=Math.round(charges * 100) / 100;
 			$("#charges").text(charges);
 						
@@ -48,7 +52,7 @@
 			console.log("Brokerage: " + brokerage);
 			console.log("STT: " + stt);
 			console.log("Exch: " + exch);
-			console.log("Stamp duty: " + duty);
+			console.log("Stamp : " + stamp);
 			console.log("SEBI: " + sebi);
 			console.log("GST: " + gst);
 
@@ -67,6 +71,8 @@
 </head>
 	<body>
 	 <!-- 
+         This is a multiline comment and it can
+         span through as many as lines you like.
       
 		Buy: <input type="number" id="buy_input">
 		Sell: <input type="number" id="sell_input">
