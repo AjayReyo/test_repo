@@ -1,0 +1,11 @@
+---
+application:
+  name: "yahooeodbot"
+  project: "yahooEOD"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-yahooeodbot"
+  routes:
+  - application_name: "yahooeodbot"
+    paths:
+    - "/*"
